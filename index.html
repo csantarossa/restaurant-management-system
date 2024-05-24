@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Management App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Restaurant Management App</h1>
+
+      <div id="booking-section">
+        <h2>Make a Reservation</h2>
+        <label for="customer-name">Customer Name:</label>
+        <input
+          type="text"
+          id="customer-name"
+          placeholder="Enter name"
+          required
+        />
+        <label for="customer-contact">Customer Contact:</label>
+        <input
+          type="text"
+          id="customer-contact"
+          placeholder="Enter contact"
+          required
+        />
+        <label for="reservation-date">Reservation Date:</label>
+        <input type="date" id="reservation-date" required />
+        <label for="reservation-time">Reservation Time:</label>
+        <input type="time" id="reservation-time" required />
+        <label for="number-of-guests">Number of Guests:</label>
+        <input type="number" id="number-of-guests" required />
+        <label for="table-number">Table Number:</label>
+        <input type="number" id="table-number" required />
+        <button onclick="makeReservation()">Make Reservation</button>
+        <div id="reservations"></div>
+      </div>
+
+      <div id="order-section">
+        <h2>Place an Order</h2>
+        <label for="order-table-number">Table Number:</label>
+        <input type="number" id="order-table-number" required />
+        <label for="item-name">Item Name:</label>
+        <select id="item-name"></select>
+        <button onclick="placeOrder()">Place Order</button>
+        <div id="orders"></div>
+      </div>
+
+      <div id="kitchen-section">
+        <h2>Kitchen Orders</h2>
+        <!-- <button onclick="viewKitchenOrders()">View Kitchen Orders</button> -->
+        <table id="kitchen-orders-table">
+          <thead>
+            <tr>
+              <th>Table Number</th>
+              <th>Order Details</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="kitchen-orders"></tbody>
+        </table>
+      </div>
+
+      <div id="invoice-section">
+        <h2>Generate Invoice</h2>
+        <label for="invoice-table-number">Table Number:</label>
+        <input type="number" id="invoice-table-number" required />
+        <button onclick="generateInvoice()">Generate Invoice</button>
+        <table id="invoice-table">
+          <thead>
+            <tr>
+              <th>Table Number</th>
+              <th>Items</th>
+              <th>Amount Due</th>
+              <th>Paid</th>
+            </tr>
+          </thead>
+          <tbody id="invoice"></tbody>
+        </table>
+      </div>
+
+      <div id="payment-section">
+        <h2>Process Payment</h2>
+        <label for="payment-table-number">Table Number:</label>
+        <input type="number" id="payment-table-number" required />
+        <button onclick="processPayment()">Process Payment</button>
+        <table id="payments-table">
+          <thead>
+            <tr>
+              <th>Table Number</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="payments"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
